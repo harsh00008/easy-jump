@@ -9,7 +9,7 @@ import java.awt.Color;
 public class Level extends Actor implements IScoreObserver
 {
     int level = 1;
-    int scoreOffset = 100;
+    int scoreOffset = 500;
     
     Level(){
         setImage(new GreenfootImage("Level : " + level,20, Color.GREEN, Color.BLACK, Color.YELLOW));

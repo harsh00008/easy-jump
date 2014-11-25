@@ -38,6 +38,8 @@ public class NinjaWorld extends World
         Level level = new Level();
         addObject(level, 250, 50);
         score.attach(level);
+        CommandActor commandOp = new CommandActor();
+        addObject(commandOp,300,690);
         
 
     }

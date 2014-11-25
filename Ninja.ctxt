@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Ninja()
+comment1.params=
+comment1.target=void\ act()
+comment2.params=obj
+comment2.target=void\ attach(IJumpObserver)
+comment3.params=obj
+comment3.target=void\ detach(IJumpObserver)
+comment4.params=
+comment4.target=void\ notifyJump()
+comment5.params=
+comment5.target=void\ jump()
+comment6.params=
+comment6.target=void\ hit()
+comment7.params=nextState
+comment7.target=void\ setState(PlayerStates)
+comment8.params=
+comment8.target=void\ changeToRightWall()
+comment9.params=
+comment9.target=void\ changeToLeftWall()
+numComments=10

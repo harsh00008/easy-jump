@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Score()
+comment1.params=
+comment1.target=void\ updateOnJump()
+comment2.params=score
+comment2.target=void\ notifyScore(int)
+comment3.params=obj
+comment3.target=void\ attach(IScoreObserver)
+comment4.params=obj
+comment4.target=void\ detach(IScoreObserver)
+comment5.params=
+comment5.target=void\ act()
+numComments=6

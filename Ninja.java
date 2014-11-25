@@ -42,7 +42,7 @@ public class Ninja extends Actor implements IJumpSubject
         
          if(Greenfoot.isKeyDown("space")){
             try{
-                //Thread.sleep(200);
+               Thread.sleep(150);
                 jump();
             }
             catch(Exception e){
