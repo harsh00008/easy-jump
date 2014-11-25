@@ -24,16 +24,28 @@ public class NinjaWorld extends World
         
     }
     
+    
+    
     public void populate(){
         Ninja ninjaCharacter = new Ninja();
         addObject(ninjaCharacter, 40,600);
+         animateWall();
+        
+        // Setting up Observer Pattern
+        Score score = new Score();
+        addObject(score, 150, 50);
+        ninjaCharacter.attach(score);
+        Level level = new Level();
+        addObject(level, 250, 50);
+        score.attach(level);
+        
 
     }
     
     public void runLevel(){
         long curTime  = System.currentTimeMillis();  
        
-        if (curTime >= lastAdded + 1000) //5000ms = 5s  
+        if (curTime >= lastAdded + 4000) //5000ms = 5s  
         {  
             box = ObstacleFactory.createObstacle();
 
@@ -55,7 +67,7 @@ public class NinjaWorld extends World
     }
     
     public void act(){
-        animateWall();
+       
         runLevel();
         /*
         if( Greenfoot.isKeyDown("right") ){
@@ -71,9 +83,9 @@ public class NinjaWorld extends World
     }
     
     public void animateWall(){
-        Wall leftWall = (Wall)WallFactory.createWall();
+        Wall leftWall = new Wall();
         addObject(leftWall, 10, 320);
-        Wall rightWall = (Wall)WallFactory.createWall();
+        Wall rightWall = new Wall();
         addObject(rightWall, 590, 320);
     }
 }
