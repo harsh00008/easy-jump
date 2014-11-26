@@ -8,26 +8,28 @@ import java.awt.Color;
  */
 public class NinjaWorld extends World
 {
-
+     Ninja ninjaCharacter ;
     /**
      * Constructor for objects of class NinjaWorld.
      * 
      */
     Obstacles box = null;
     long lastAdded = System.currentTimeMillis();  
-    
+    GreenfootSound backgroundMusic = new GreenfootSound("Ninja Gaiden.mp3");  
+    CommandActor commandOp ;
     public NinjaWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 700, 1);         
         populate();
+       // backgroundMusic.playLoop(); 
         
     }
     
     
     
     public void populate(){
-        Ninja ninjaCharacter = new Ninja();
+        ninjaCharacter = new Ninja();
         addObject(ninjaCharacter, 40,600);
          animateWall();
         
@@ -38,7 +40,7 @@ public class NinjaWorld extends World
         Level level = new Level();
         addObject(level, 250, 50);
         score.attach(level);
-        CommandActor commandOp = new CommandActor();
+        commandOp = new CommandActor("StartScreen");
         addObject(commandOp,300,690);
         
 
@@ -89,5 +91,13 @@ public class NinjaWorld extends World
         addObject(leftWall, 10, 320);
         Wall rightWall = new Wall();
         addObject(rightWall, 590, 320);
+    }
+    
+    public Ninja getNinja(){
+        return this.ninjaCharacter;
+    }
+    
+     public CommandActor getCommandActor(){
+        return this.commandOp;
     }
 }

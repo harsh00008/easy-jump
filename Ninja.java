@@ -19,11 +19,13 @@ public class Ninja extends Actor implements IJumpSubject
     
     
     GreenfootImage rightImage = new GreenfootImage("running-ninja-right.gif");
-        GreenfootImage deadNinja = new GreenfootImage("dead_ninja.gif");
+    GreenfootImage deadNinja = new GreenfootImage("dead_ninja.gif");
     GreenfootImage leftImage = new GreenfootImage("running-ninja.gif");
-    private boolean isLeft = true;
+    private boolean isBackgroundSoundPlaying = Boolean.FALSE;
+    
     
     public Ninja(){
+        
         turn(90);
         setImage(leftImage);
         
@@ -88,7 +90,8 @@ public class Ninja extends Actor implements IJumpSubject
         currentState.jump();
         //this is to avoid the increment of score after player is dead and space bar is hit
         if(currentState!=deadState){
-           notifyJump(); 
+         Greenfoot.playSound("jump.mp3");
+         notifyJump(); 
         }
         
     }
@@ -108,6 +111,21 @@ public class Ninja extends Actor implements IJumpSubject
     }
     public void goToHeaven(){
         //turn(90);
+        if(!isBackgroundSoundPlaying){
+            try{
+            Greenfoot.playSound("hit.wav");
+            Thread.sleep(800);
+            Greenfoot.playSound("hit2.wav");
+            Thread.sleep(800);
+            //gameOverMusic.play();
+            isBackgroundSoundPlaying=Boolean.TRUE;
+            }
+            catch(Exception e){
+                
+            }
+            
+        }
+        
         setImage(deadNinja);
         if(getX()==550 || getX()>250){
             setLocation ( getX()-vSpeed, getY() - vSpeed);
@@ -118,6 +136,8 @@ public class Ninja extends Actor implements IJumpSubject
         vSpeed = vSpeed + acceleration;
     
      }
+     
+    
     
     
     public void changeToRightWall(){
@@ -134,6 +154,10 @@ public class Ninja extends Actor implements IJumpSubject
             setLocation(40, 600);
             setImage(rightImage);
     }
+    
+    /*public GreenfootSound getGameOverSound(){
+        return this.gameOverMusic;
+    }*/
     
     
 }

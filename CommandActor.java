@@ -14,8 +14,9 @@ public class CommandActor extends Actor
     ICommand strGame; 
     ICommand extGame ;
     GameInvoker myChangeGameInvoker;
-    
-    public CommandActor()
+    GreenfootSound gameoverSound;
+    GreenfootSound startSoundSound;
+    public CommandActor(String screenType)
     {
         GreenfootImage menu = new GreenfootImage("commandMenu.png");
           setImage(menu);
@@ -25,17 +26,43 @@ public class CommandActor extends Actor
            strGame = new StartGameCommand(startGameRecevier);
            extGame = new ExitGameCommand(exitGameReceiver);
            myChangeGameInvoker = new GameInvoker();
-    }
+           if(screenType.equals("GameOverScreen")){
+               
+               gameoverSound = new GreenfootSound("Ninja Gaiden 3 Soundtrack-A Hero Unmasked.mp3");
+              // gameoverSound.play();
+               
+            }else{
+                startSoundSound = new GreenfootSound("Ninja Gaiden.mp3");
+                startSoundSound.play();
+            }
+           
+        }
     public void act() 
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("N"))
         {
-        myChangeGameInvoker.executeGame(strGame);
+            if(startSoundSound!=null){
+                startSoundSound.stop();
+            }else if(gameoverSound!=null) {
+                gameoverSound.stop();
+            }
+        
+        
+        myChangeGameInvoker.executeGame(extGame); 
         }
-        if(Greenfoot.isKeyDown("X"))
+        if(Greenfoot.isKeyDown("E"))
         {
+            gameoverSound.stop();
          myChangeGameInvoker.executeGame(extGame);   
         }
-    }    
+    } 
+    
+    
+    public  GreenfootSound getStartSound(){
+        return this.startSoundSound;
+    }
+     public  GreenfootSound getGameOverSoundSound(){
+        return this.gameoverSound;
+    }
 }
