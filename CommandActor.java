@@ -17,7 +17,9 @@ public class CommandActor extends Actor
     
     public CommandActor()
     {
-        setImage(new GreenfootImage("Press N for new game and X for Exit ", 39 ,  Color.GREEN, Color.BLACK, Color.YELLOW));
+        GreenfootImage menu = new GreenfootImage("commandMenu.png");
+          setImage(menu);
+        //setImage(new GreenfootImage("Press N for new game and X for Exit ", 39 ,  Color.GREEN, Color.BLACK, Color.YELLOW));
            startGameRecevier= new StartGameReceiver();
            exitGameReceiver= new ExitGameReceiver();
            strGame = new StartGameCommand(startGameRecevier);

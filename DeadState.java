@@ -1,9 +1,4 @@
-/**
- * Write a description of class DeadState here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*; 
 public class DeadState implements IState 
 {
     
@@ -15,7 +10,8 @@ public class DeadState implements IState
 
     public void jump()
     {
-        
+        GameOverWorld gameoverWorld = new GameOverWorld();
+        Greenfoot.setWorld(gameoverWorld);
     }
     
     public void hit()

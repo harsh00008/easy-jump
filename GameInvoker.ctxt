@@ -1,2 +1,5 @@
 #BlueJ class context
-numComments=0
+comment0.params=cmd
+comment0.target=void\ executeGame(ICommand)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ changeGame\r\n
+numComments=1
