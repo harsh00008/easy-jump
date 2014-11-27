@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=newGame
 comment0.target=StartGameCommand(IGameReceiver)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ startGame\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ startGame\n
 comment1.params=
 comment1.target=void\ execute()
 numComments=2

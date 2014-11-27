@@ -17,6 +17,7 @@ public class NinjaWorld extends World
     long lastAdded = System.currentTimeMillis();  
     GreenfootSound backgroundMusic = new GreenfootSound("Ninja Gaiden.mp3");  
     CommandActor commandOp ;
+    private Level level;
     public NinjaWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -37,7 +38,7 @@ public class NinjaWorld extends World
         Score score = new Score();
         addObject(score, 150, 50);
         ninjaCharacter.attach(score);
-        Level level = new Level();
+        level = new Level();
         addObject(level, 250, 50);
         score.attach(level);
         commandOp = new CommandActor("StartScreen");
@@ -49,7 +50,7 @@ public class NinjaWorld extends World
     public void runLevel(){
         long curTime  = System.currentTimeMillis();  
        
-        if (curTime >= lastAdded + 4000) //5000ms = 5s  
+        if (curTime >= lastAdded + level.getLevelSpeed()) //5000ms = 5s  
         {  
             box = ObstacleFactory.createObstacle();
 
