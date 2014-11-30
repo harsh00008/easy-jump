@@ -74,17 +74,9 @@ public class NinjaWorld extends World
     public void act(){
        
         runLevel();
-        /*
-        if( Greenfoot.isKeyDown("right") ){
-            Ninja ninja = (Ninja)getObjects(Ninja.class).get(0);
-            ninja.changeToRightWall();
-        }
-        if( Greenfoot.isKeyDown("left") ){
-            Ninja ninja = (Ninja)getObjects(Ninja.class).get(0);
-            ninja.changeToLeftWall();
-        }*/
-        Wall leftWall = (Wall)WallFactory.createWall();
-        addObject(leftWall, 10, 320);
+
+        //Wall leftWall = (Wall)WallFactory.createWall();
+        //addObject(leftWall, 10, 320);
     }
     
     public void animateWall(){

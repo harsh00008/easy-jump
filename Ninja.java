@@ -54,7 +54,7 @@ public class Ninja extends Actor implements IJumpSubject
             }
         }
         try {
-            Actor redbox = getOneIntersectingObject( RedBox.class ) ;
+            Actor redbox = getOneIntersectingObject( Stone.class ) ;
             Actor balcony = getOneIntersectingObject( Box.class ) ;
              if(redbox!=null || balcony!=null){
                hit();

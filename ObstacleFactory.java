@@ -13,11 +13,11 @@ public class ObstacleFactory
         Obstacles b = null;
         switch(Greenfoot.getRandomNumber(3)){
             case 1:
-                b = new Box();
+                b = new Stone();
             break;
             
             case 2:
-                b = new RedBox();
+                b = new Box();
             break;
             
             default:

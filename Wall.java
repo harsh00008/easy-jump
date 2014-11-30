@@ -19,7 +19,7 @@ public class Wall extends Actor
     
     public void act() 
     {
-        move(10);
+        //move(10);
       
     }    
 }
